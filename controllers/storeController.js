@@ -78,6 +78,7 @@ exports.getStores = async (req, res) => {
     .skip(skip)
     .limit(limit);
 
+  // count all stores present in DB
   const countPromise = Store.count();
   const [stores, count] = await Promise.all([storesPromise, countPromise]);
 
